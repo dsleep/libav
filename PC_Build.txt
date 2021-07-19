@@ -1,0 +1,9 @@
+run x86_x64 Cross Tools Command Prompt for VS 2017
+set MSYS2_PATH_TYPE=inherit
+run msys2 from inside VS command promp
+Make sure you have "pkg-config"
+pacman -S mingw-w64-x86_64-pkg-config
+
+./configure --prefix=REGLIBAV --toolchain=msvc --arch=x86_64 --disable-programs --logfile="libavconfig.txt" --enable-shared --disable-network --disable-doc --disable-pod2man --disable-texi2html   
+
+make install -j32
