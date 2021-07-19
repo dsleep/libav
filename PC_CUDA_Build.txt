@@ -1,1 +1,9 @@
+run x86_x64 Cross Tools Command Prompt for VS 2017
+set MSYS2_PATH_TYPE=inherit
+run msys2 from inside VS command promp
+Make sure you have "pkg-config"
+pacman -S mingw-w64-x86_64-pkg-config
+
 ./configure --prefix=LIBAV_CUDA --toolchain=msvc --arch=x86_64 --disable-programs --extra-ldflags="-LIBPATH:/D/Programming_Projects/CUDALINK/lib/x64 -LIBPATH:/D/Programming_Projects/NvCodec/lib/x64" --extra-cflags="-I/D/Programming_Projects/CUDALINK/include -I/D/Programming_Projects/NvCodec/include" --enable-nvenc --enable-cuda --enable-nonfree --logfile="libavconfig.txt" --enable-shared --disable-network
+
+make install -j32
